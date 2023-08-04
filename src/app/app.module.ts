@@ -6,12 +6,21 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { OddComponent } from './test-result/odd/odd.component';
+import { EvenComponent } from './test-result/even/even.component';
+import {GameControlComponent} from "./test-result/game-control/game-control.component";
+import {MyGameControlComponent} from "./test-3/my-game-control/my-game-control.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent,
+    GameControlComponent,
+    MyGameControlComponent
   ],
   imports: [
     BrowserModule,

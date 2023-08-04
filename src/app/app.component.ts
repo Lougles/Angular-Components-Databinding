@@ -1,13 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   serverElements = [{type: 'server', name: 'Test', content: 'Just a test'}];
+  numberElements = [{type: 'odd', name: 'This is odd'}]
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+  ngOnInit() {
+  }
 
+  onIntervalFired(firedNumber: number) {
+    if(firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
+  }
+
+  onNumberAdd(data: {type: string, name: string}) {
+    this.numberElements.push({
+      type: data.type,
+      name: data.name
+    })
+  }
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
       type: 'server',
